@@ -1,0 +1,25 @@
+{
+  "name": "canvastriangles",
+  "version": "1.0.0",
+  "description": "When I was taking a shower I saw inspiration at the label of my shampoo. Yeah, really!\r There were some semitransparent, overlapped triangles in few variations.\r I thought\r >Damn, it could be quite funny animation if it was on website... wait... I can do it!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "cd dist && rmdir /S /Q js && mkdir js && cd .. && babel ./src/js -s -d ./dist/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamilrogala/canvasTriangles.git"
+  },
+  "author": "Kamil Rogala <contact@kamilrogala.it> (https://kamilrogala.it)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamilrogala/canvasTriangles/issues"
+  },
+  "homepage": "https://github.com/kamilrogala/canvasTriangles#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

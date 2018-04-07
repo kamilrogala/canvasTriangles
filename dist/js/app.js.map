@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/js/app.js"],"names":["window","addEventListener"],"mappings":";;AAAAA,OAAOC,gBAAP,CAAwB,kBAAxB,EAA2C,YAAI;AAC9C;AACA,CAFD","file":"app.js","sourcesContent":["window.addEventListener('DOMContentLoaded',()=>{\r\n\t//babel works perfect with bash commands\r\n});"]}
