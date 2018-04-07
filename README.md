@@ -1,4 +1,4 @@
-# Project: ajaxTesting
+# Project: canvasTriangles
 
 When I was taking a shower I saw inspiration at the label of my shampoo. Yeah, really!
 There were some semitransparent, overlapped triangles in few variations.
