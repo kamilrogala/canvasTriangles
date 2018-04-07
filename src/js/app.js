@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	ctx.fillStyle = "rgba(205,205,0,.5)";
 
 	for (let i = 0; i < trianglesAmount; i++) {
-		let newTriangle = new Triangle(
+		const newTriangle = new Triangle(
 			random(cWidth),
 			random(cHeight),
 			random(cWidth),
