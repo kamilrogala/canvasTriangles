@@ -77,6 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	const trianglesArray = []
 
 	for (let i = 0; i < trianglesAmount; i++) {
+
 		let color = defaultTrianglesColor;
 		if (randomColors) {
 			const R = Math.floor(Math.random() * 255) + 1;
@@ -85,6 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			const A = (Math.random()).toPrecision(2);
 			color = `rgba(${R}, ${G}, ${B}, ${A})`;
 		}
+
 		const newTriangle = new Triangle(
 			random(cWidth),
 			random(cHeight),
