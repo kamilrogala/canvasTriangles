@@ -8,6 +8,12 @@ window.addEventListener('DOMContentLoaded', () => {
 			this.y2 = y2;
 			this.y3 = y3;
 			this.color = color;
+			this.x1V = 1;
+			this.x2V = 1;
+			this.x3V = 1;
+			this.y1V = 1;
+			this.y2V = 1;
+			this.y3V = 1;
 		}
 
 		drawTriangle() {
@@ -19,11 +25,43 @@ window.addEventListener('DOMContentLoaded', () => {
 			ctx.closePath();
 			ctx.fill();
 		}
+		animateTriangle() {
+			ctx.fillStyle = this.color;
+
+			if (this.x1 == cWidth || this.x1 == 0) {
+				this.x1V = -this.x1V;
+			}
+			if (this.x2 == cWidth || this.x2 == 0) {
+				this.x2V = -this.x2V;
+			}
+			if (this.x3 == cWidth || this.x3 == 0) {
+				this.x3V = -this.x3V;
+			}
+			
+			if (this.y1 == cHeight || this.y1 == 0) {
+				this.y1V = -this.y1V;
+			}
+			if (this.y2 == cHeight || this.y2 == 0) {
+				this.y2V = -this.y2V;
+			}
+			if (this.y3 == cHeight || this.y3 == 0) {
+				this.y3V = -this.y3V;
+			}
+			this.x1 -= this.x1V;
+			this.x2 -= this.x2V;
+			this.x3 -= this.x3V;
+			this.y1 -= this.y1V;
+			this.y2 -= this.y2V;
+			this.y3 -= this.y3V;
+			this.drawTriangle();
+		}
 	}
 
-	function random(a) {
-		return Math.floor(Math.random() * a) + 1;
+	function random(maxNumber) {
+		return Math.floor(Math.random() * maxNumber) + 1;
 	}
+
+
 	const trianglesAmount = 10;
 	const canvasEl = document.querySelector('canvas');
 	const ctx = canvasEl.getContext('2d');
@@ -50,7 +88,16 @@ window.addEventListener('DOMContentLoaded', () => {
 		);
 		trianglesArray.push(newTriangle);
 	}
-	trianglesArray.forEach((singleTriangle) => {
-		singleTriangle.drawTriangle();
-	});
+	console.log(trianglesArray)
+
+	function animateSingleTriangle() {
+		requestAnimationFrame(animateSingleTriangle);
+		ctx.fillStyle = "#000";
+		ctx.fillRect(0, 0, cWidth, cHeight);
+		trianglesArray.forEach((singleTriangle) => {
+			singleTriangle.animateTriangle();
+		});
+	}
+	animateSingleTriangle();
+
 });
