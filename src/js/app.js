@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 	//pseudo config
 	const trianglesAmount = 10;
 	const randomColors = true;
